@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Integer, String, Float, Date, Enum, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, Date, Enum, ForeignKey, Numeric
 from sqlalchemy.orm import relationship
 from .database import Base
 import enum
 
+#database models
 class InvoiceStatus(str, enum.Enum):
     draft = "draft"
     sent = "sent"
@@ -16,7 +17,9 @@ class Client(Base):
     phone = Column(String(20))
     business_id = Column(String(50))
     note = Column(String(500))
+
     gigs = relationship("Gig", back_populates="client")
+    invoices = relationship("Invoice", back_populates="client")
 
 class Gig(Base):
     __tablename__ = "gigs"
@@ -28,7 +31,7 @@ class Gig(Base):
     description = Column(String(500))
 
     client = relationship("Client", back_populates="gigs")
-    invoice = relationship("Invoice", back_populates="gig", useList=False)
+    invoice = relationship("Invoice", back_populates="gig", uselist=False)
 
 class Invoice(Base):
     __tablename__ = "invoices"
