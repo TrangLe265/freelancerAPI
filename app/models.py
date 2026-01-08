@@ -25,6 +25,7 @@ class Gig(Base):
     __tablename__ = "gigs"
     id = Column(Integer, primary_key=True)
     client_id = Column(Integer, ForeignKey("clients.id"))
+    invoice_id = Column(Integer, ForeignKey("invoices.id"))
     title = Column(String(200))
     wage = Column(Numeric(10, 2), nullable=False)
     location = Column(String(100))

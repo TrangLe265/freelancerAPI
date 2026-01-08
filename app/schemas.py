@@ -1,19 +1,23 @@
 from pydantic import BaseModel, EmailStr
 from datetime import date
 from enum import Enum
+from typing import Optional
+from .models import InvoiceStatus
 
 class ClientCreate(BaseModel):
     name: str
     email: str
-    phone: str | None = None
-    business_id: str | None = None
+    phone: Optional[str]
+    business_id: Optional[str]
+    note: Optional[str]
 
 class ClientResponse(ClientCreate):
     id: int
     name: str
     email: str
-    phone: str | None = None
-    business_id: str | None = None
+    phone: Optional[str]
+    business_id: Optional[str]
+    note: Optional[str]
     class Config:
         from_attributes = True
 
@@ -22,14 +26,14 @@ class GigCreate(BaseModel):
     client_id: int
     title: str
     wage: float
-    location: str | None = None
-    description: str | None = None
+    location: Optional[str]
+    description: Optional[str]
 
 class GigResponse(GigCreate):
     title: str
     wage: float
-    location: str | None = None
-    description: str | None = None
+    location: Optional[str]
+    description: Optional[str]
     class Config:
         from_attributes = True      
 
