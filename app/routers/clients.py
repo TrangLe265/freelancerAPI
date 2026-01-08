@@ -12,6 +12,13 @@ def get_db():
     finally:
         db.close()
 
+@router.get("/", response_model=list[schemas.ClientResponse])
+def get_all_clients(db: Session = Depends(get_db)):
+    db_clients = db.query(models.Client).all()
+    return db_clients
+    if db_clients is None:
+        raise HTTPException(status_code=404, detail="No clients found")
+
 @router.post("/", response_model=schemas.ClientResponse)
 def create_client(client: schemas.ClientCreate, db: Session = Depends(get_db)):
     db_client = models.Client(**client.dict())
@@ -19,10 +26,13 @@ def create_client(client: schemas.ClientCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_client)
     return db_client
-    
+    if db_client is None:
+        raise HTTPException(status_code=400, detail="Client could not be created")
+
 @router.get("/{client_id}", response_model=schemas.ClientResponse)
 def get_client(client_id: int, db: Session = Depends(get_db)):
     db_client = db.query(models.Client).filter(models.Client.id == client_id).first()
     if not db_client:
         raise HTTPException(status_code=404, detail="Client not found")
     return db_client
+
