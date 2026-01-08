@@ -9,6 +9,11 @@ class InvoiceStatus(str, enum.Enum):
     sent = "sent"
     paid = "paid"
 
+class GigStatus(str, enum.Enum):
+    pending = "pending"
+    completed = "completed"
+    cancelled = "cancelled"
+
 class Client(Base):
     __tablename__ = "clients"
     id = Column(Integer, primary_key=True)
@@ -25,12 +30,11 @@ class Gig(Base):
     __tablename__ = "gigs"
     id = Column(Integer, primary_key=True)
     client_id = Column(Integer, ForeignKey("clients.id"))
-    invoice_id = Column(Integer, ForeignKey("invoices.id"))
     title = Column(String(200))
     wage = Column(Numeric(10, 2), nullable=False)
     location = Column(String(100))
     description = Column(String(500))
-
+    gig_status = Column(Enum(GigStatus), default=GigStatus.pending)
     client = relationship("Client", back_populates="gigs")
     invoice = relationship("Invoice", back_populates="gig", uselist=False)
 
@@ -38,6 +42,7 @@ class Invoice(Base):
     __tablename__ = "invoices"
     id = Column(Integer, primary_key=True)
     client_id = Column(Integer, ForeignKey("clients.id"))
+    gig_id = Column(Integer, ForeignKey("gigs.id"))
     issue_date = Column(Date)
     due_date = Column(Date)
     status = Column(Enum(InvoiceStatus))

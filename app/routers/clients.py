@@ -1,16 +1,9 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from ..database import SessionLocal
 from .. import models, schemas
+from ..database import get_db
 
 router = APIRouter(prefix="/clients", tags=["Clients"])
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.get("/", response_model=list[schemas.ClientResponse])
 def get_all_clients(db: Session = Depends(get_db)):
@@ -36,3 +29,11 @@ def get_client(client_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Client not found")
     return db_client
 
+@router.delete("/{client_id}", response_model=schemas.ClientResponse)
+def delete_client(client_id: int, db: Session = Depends(get_db)):
+    db_client = db.query(models.Client).filter(models.Client.id == client_id).first()
+    if not db_client:
+        raise HTTPException(status_code=404, detail="Client not found")
+    db.delete(db_client)
+    db.commit()
+    return db_client
