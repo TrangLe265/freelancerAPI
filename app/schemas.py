@@ -11,6 +11,13 @@ class ClientCreate(BaseModel):
     business_id: Optional[str]
     note: Optional[str]
 
+class ClientUpdate(BaseModel):
+    name: Optional[str]=None
+    email: Optional[EmailStr]=None
+    phone: Optional[str]=None
+    business_id: Optional[str]=None
+    note: Optional[str]=None
+    
 class ClientResponse(ClientCreate):
     id: int
     name: str
@@ -46,13 +53,17 @@ class GigResponse(GigCreate):
     class Config:
         from_attributes = True   
 
-
 class InvoiceCreate(BaseModel):
     client_id: int
     gig_id: int
     issue_date: date
     due_date: date
     status: InvoiceStatus
+
+class InvoiceUpdate(BaseModel):
+    issue_date: Optional[date]=None
+    due_date: Optional[date]=None
+    status: Optional[InvoiceStatus]=None
 
 class InvoiceResponse(InvoiceCreate):
     id: int
