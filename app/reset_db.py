@@ -1,5 +1,5 @@
-from database import Base, engine
-import models  # ensure models are imported and registered
+from app.database import Base, engine
+import app.models  # ensure models are imported and registered
 
 def reset_db():
     Base.metadata.drop_all(bind=engine)

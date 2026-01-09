@@ -3,6 +3,11 @@ from datetime import date
 from enum import Enum
 from typing import Optional
 from .models import InvoiceStatus, GigStatus
+from datetime import date, timedelta
+
+#create Pydantic schemas, what got sent and received via API
+issue_date = date.today()
+due_date = issue_date + timedelta(days=15)
 
 class ClientCreate(BaseModel):
     name: str
@@ -13,11 +18,11 @@ class ClientCreate(BaseModel):
 
 class ClientUpdate(BaseModel):
     name: Optional[str]=None
-    email: Optional[EmailStr]=None
+    email: Optional[str]=None
     phone: Optional[str]=None
     business_id: Optional[str]=None
     note: Optional[str]=None
-    
+
 class ClientResponse(ClientCreate):
     id: int
     name: str
@@ -44,7 +49,8 @@ class GigUpdate(BaseModel):
     gig_status: Optional[GigStatus]=None
 
 class GigResponse(GigCreate):
-    client_id: int
+    id: int
+    client_id: Optional[int] = None
     title: str
     wage: float
     location: Optional[str]
@@ -56,8 +62,8 @@ class GigResponse(GigCreate):
 class InvoiceCreate(BaseModel):
     client_id: int
     gig_id: int
-    issue_date: date
-    due_date: date
+    issue_date: date = issue_date
+    due_date: date = due_date
     status: InvoiceStatus
 
 class InvoiceUpdate(BaseModel):

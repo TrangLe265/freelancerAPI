@@ -6,8 +6,10 @@ import enum
 #database models
 class InvoiceStatus(str, enum.Enum):
     draft = "draft"
+    created = "created"
     sent = "sent"
     paid = "paid"
+    void = "void"
 
 class GigStatus(str, enum.Enum):
     pending = "pending"
@@ -16,9 +18,9 @@ class GigStatus(str, enum.Enum):
 
 class Client(Base):
     __tablename__ = "clients"
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
-    email = Column(String(100), nullable=False)
+    email = Column(String(100), nullable=False, unique=True)
     phone = Column(String(20))
     business_id = Column(String(50))
     note = Column(String(500))
@@ -35,17 +37,18 @@ class Gig(Base):
     location = Column(String(100))
     description = Column(String(500))
     gig_status = Column(Enum(GigStatus), default=GigStatus.pending)
+
     client = relationship("Client", back_populates="gigs")
     invoice = relationship("Invoice", back_populates="gig", uselist=False)
 
 class Invoice(Base):
     __tablename__ = "invoices"
     id = Column(Integer, primary_key=True)
-    client_id = Column(Integer, ForeignKey("clients.id"))
-    gig_id = Column(Integer, ForeignKey("gigs.id"))
-    issue_date = Column(Date)
-    due_date = Column(Date)
-    status = Column(Enum(InvoiceStatus))
+    client_id = Column(Integer, ForeignKey("clients.id"), nullable=False)
+    gig_id = Column(Integer, ForeignKey("gigs.id"), nullable=False)
+    issue_date = Column(Date, nullable=False)
+    due_date = Column(Date, nullable=False)
+    status = Column(Enum(InvoiceStatus), default=InvoiceStatus.draft)
     
     client = relationship("Client", back_populates="invoices")
     gig = relationship("Gig", back_populates="invoice")
