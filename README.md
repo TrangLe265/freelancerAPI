@@ -4,6 +4,8 @@ A backend API built with **FastAPI**, **SQLAlchemy**, and **Pydantic** to help f
 
 This project focuses on **correct data modeling**, **business rules**, and **production‑style API design**, rather than just basic CRUD.
 
+This backend serves the following frontend https://github.com/TrangLe265/freelancer-hub
+
 ---
 
 ## ✨ Features
@@ -227,4 +229,4 @@ This project is for learning and portfolio purposes.
 
 ## 👤 Author
 
-Built by **Trang Thuy Le** as a portfolio backend project demonstrating clean API design, data modeling, and real‑world business logic.
+Built by **Trang Thuy Le** 
