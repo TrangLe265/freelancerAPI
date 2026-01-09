@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .. import models, schemas
+from .. import models, schemas, enums
 from ..database import get_db
 
 router = APIRouter(prefix="/clients", tags=["Clients"])
@@ -35,12 +35,13 @@ def create_client(client: schemas.ClientCreate, db: Session = Depends(get_db)):
     if db_client is None:
         raise HTTPException(status_code=400, detail="Client could not be created")
 
-@router.delete("/{client_id}", response_model=schemas.ClientResponse)
-def delete_client(client_id: int, db: Session = Depends(get_db)):
+#soft delete - set status to inactive
+@router.patch("/{client_id}", response_model=schemas.ClientResponse)
+def deactivate_client(client_id: int, db: Session = Depends(get_db)):
     db_client = db.query(models.Client).filter(models.Client.id == client_id).first()
     if not db_client:
         raise HTTPException(status_code=404, detail="Client not found")
-    db.delete(db_client)
+    db_client.status = enums.ClientStatus.inactive
     db.commit()
     return db_client
 
