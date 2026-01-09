@@ -19,7 +19,7 @@ def get_gig(gig_id: int, db: Session = Depends(get_db)):
     if not db_gig:
         raise HTTPException(status_code=404, detail="Gig not found")
     return db_gig   
-     
+    
 @router.post("/", response_model=schemas.GigResponse)
 def create_gig(gig: schemas.GigCreate, db: Session = Depends(get_db)):
     if (db.query(models.Client).filter(models.Client.id == gig.client_id).first() is None):
