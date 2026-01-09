@@ -25,6 +25,7 @@ class ClientResponse(ClientCreate):
     id: int
     name: str
     email: str
+    status: ClientStatus
     phone: Optional[str]
     business_id: Optional[str]
     note: Optional[str]
