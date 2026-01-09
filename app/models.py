@@ -24,6 +24,7 @@ class Gig(Base):
     title = Column(String(200))
     wage = Column(Numeric(10, 2), nullable=False)
     location = Column(String(100))
+    date= Column(Date, nullable=False)
     description = Column(String(500))
     status = Column(Enum(GigStatus), default=GigStatus.pending)
 

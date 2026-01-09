@@ -37,12 +37,14 @@ class GigCreate(BaseModel):
     title: str
     wage: float
     location: Optional[str]
+    date: date
     description: Optional[str]
 
 class GigUpdate(BaseModel):
     title: Optional[str]=None
     wage: Optional[float]=None
     location: Optional[str] =None
+    date: Optional[date] = None
     description: Optional[str]=None
 
 class GigResponse(GigCreate):
@@ -51,6 +53,7 @@ class GigResponse(GigCreate):
     title: str
     wage: float
     location: Optional[str]
+    date: date
     description: Optional[str]
     status: GigStatus
     class Config:

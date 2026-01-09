@@ -42,6 +42,7 @@ def seed():
             title="Company Website Redesign",
             wage=4500.00,
             location="Remote",
+            date=date.today() - timedelta(days=30),
             description="Full redesign using React and Tailwind",
             status=GigStatus.completed
         ),
@@ -50,6 +51,7 @@ def seed():
             title="Landing Page SEO Optimization",
             wage=1200.00,
             location="Remote",
+            date=date.today() - timedelta(days=20),
             description="SEO and performance improvements",
             status=GigStatus.completed
         ),
@@ -58,6 +60,7 @@ def seed():
             title="Hyrox Event Media Coverage",
             wage=1800.00,
             location="Helsinki",
+            date=date.today() - timedelta(days=30),
             description="Photography and video editing",
             status=GigStatus.pending
         )
