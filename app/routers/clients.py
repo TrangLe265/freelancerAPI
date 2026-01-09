@@ -43,3 +43,18 @@ def delete_client(client_id: int, db: Session = Depends(get_db)):
     db.delete(db_client)
     db.commit()
     return db_client
+
+@router.put("/{client_id}", response_model=schemas.ClientResponse)
+def update_client(
+    client_id: int, 
+    client: schemas.ClientUpdate, 
+    db: Session = Depends(get_db)
+    ):
+    db_client = db.query(models.Client).filter(models.Client.id == client_id).first()
+    if not db_client:
+        raise HTTPException(status_code=404, detail="Client with the given id not found")
+    for key, value in client.dict(exclude_unset=True).items():
+        setattr(db_client, key, value)
+    db.commit()
+    db.refresh(db_client)
+    return db_client
