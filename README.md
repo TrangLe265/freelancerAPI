@@ -156,9 +156,13 @@ This makes it easy to:
 Run the seed script:
 
 ```bash
-python seed.py
+python -m app.seed
 ```
+If you need to clear the database and start from scratch: 
 
+```bash
+python -m app.reset_db
+```
 ---
 
 ## 🚀 Getting Started
@@ -186,7 +190,7 @@ pip install -r requirements.txt
 ### 4. Run the API
 
 ```bash
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 ### 5. Open API docs
