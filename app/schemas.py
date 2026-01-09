@@ -44,7 +44,6 @@ class GigUpdate(BaseModel):
     wage: Optional[float]=None
     location: Optional[str] =None
     description: Optional[str]=None
-    status: Optional[GigStatus]=None
 
 class GigResponse(GigCreate):
     id: int
@@ -67,12 +66,13 @@ class InvoiceBase(BaseModel):
 class InvoiceCreate(InvoiceBase):
     issue_date: date = Field(default_factory= date.today)
     due_date: date = Field(default_factory=lambda: date.today() + timedelta(days=15))
+    
 
 class InvoiceUpdate(BaseModel):
     issue_date: Optional[date]=None
     due_date: Optional[date]=None
     status: Optional[InvoiceStatus]=None
-
+    
 class InvoiceResponse(InvoiceCreate):
     id: int
     issue_date: date
