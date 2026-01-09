@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from ..database import get_db
-from .. import models, schemas  
+from .. import models, schemas, enums 
 from typing import Optional
 
 router = APIRouter(prefix="/gigs", tags=["Gigs"])
@@ -33,13 +33,22 @@ def create_gig(gig: schemas.GigCreate, db: Session = Depends(get_db)):
     if db_gig is None:
         raise HTTPException(status_code=400, detail="Gig could not be created") 
 
-@router.delete("/{gig_id}", response_model=schemas.GigResponse)
-def delete_gig(gig_id: int, db: Session = Depends(get_db)):
+#soft delete gig by setting its status to 'cancelled' and associated invoice to 'void'
+@router.patch("/{gig_id}", response_model=schemas.GigResponse)
+def deactivate_gig(gig_id: int, db: Session = Depends(get_db)):
     db_gig = db.query(models.Gig).filter(models.Gig.id == gig_id).first()
     if not db_gig:
         raise HTTPException(status_code=404, detail="Gig not found")
-    db.delete(db_gig)
+
+    db_gig.status = enums.GigStatus.cancelled
+    
+    db_invoice = db.query(models.Invoice).filter(models.Invoice.gig_id == gig_id).first()
+
+    if db_invoice:
+        db_invoice.status = enums.InvoiceStatus.void
+    
     db.commit()
+    db.refresh(db_gig)
     return db_gig
 
 @router.put("/{gig_id}", response_model=schemas.GigResponse)
@@ -54,10 +63,5 @@ def update_gig(
     for key, value in gig.dict(exclude_unset=True).items():
         setattr(db_gig, key, value)
     db.commit()
-
-    if db_gig.gig_status == 'cancelled':
-        if db_gig.invoice:
-            db.delete(db_gig.invoice)
-            db.commit()
     db.refresh(db_gig)
     return db_gig
