@@ -1,14 +1,11 @@
-from pydantic import BaseModel, EmailStr
-from datetime import date
+from pydantic import BaseModel, Field
+from datetime import date, timedelta
 from enum import Enum
 from typing import Optional
-from .models import InvoiceStatus, GigStatus
+from .enums import ClientStatus, GigStatus, InvoiceStatus
 from datetime import date, timedelta
 
 #create Pydantic schemas, what got sent and received via API
-issue_date = date.today()
-due_date = issue_date + timedelta(days=15)
-
 class ClientCreate(BaseModel):
     name: str
     email: str
@@ -19,6 +16,7 @@ class ClientCreate(BaseModel):
 class ClientUpdate(BaseModel):
     name: Optional[str]=None
     email: Optional[str]=None
+    status: Optional[ClientStatus]=None
     phone: Optional[str]=None
     business_id: Optional[str]=None
     note: Optional[str]=None
@@ -33,7 +31,6 @@ class ClientResponse(ClientCreate):
     class Config:
         from_attributes = True
 
-
 class GigCreate(BaseModel):
     client_id: int
     title: str
@@ -46,7 +43,7 @@ class GigUpdate(BaseModel):
     wage: Optional[float]=None
     location: Optional[str] =None
     description: Optional[str]=None
-    gig_status: Optional[GigStatus]=None
+    status: Optional[GigStatus]=None
 
 class GigResponse(GigCreate):
     id: int
@@ -55,16 +52,20 @@ class GigResponse(GigCreate):
     wage: float
     location: Optional[str]
     description: Optional[str]
-    gig_status: GigStatus
+    status: GigStatus
     class Config:
         from_attributes = True   
 
-class InvoiceCreate(BaseModel):
+class InvoiceBase(BaseModel):
     client_id: int
     gig_id: int
-    issue_date: date = issue_date
-    due_date: date = due_date
+    issue_date: date
+    due_date: date
     status: InvoiceStatus
+
+class InvoiceCreate(InvoiceBase):
+    issue_date: date = Field(default_factory= date.today)
+    due_date: date = Field(default_factory=lambda: date.today() + timedelta(days=15))
 
 class InvoiceUpdate(BaseModel):
     issue_date: Optional[date]=None

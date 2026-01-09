@@ -1,26 +1,15 @@
 from sqlalchemy import Column, Integer, String, Float, Date, Enum, ForeignKey, Numeric
 from sqlalchemy.orm import relationship
 from .database import Base
-import enum
+from .enums import ClientStatus, GigStatus, InvoiceStatus
 
 #database models
-class InvoiceStatus(str, enum.Enum):
-    draft = "draft"
-    created = "created"
-    sent = "sent"
-    paid = "paid"
-    void = "void"
-
-class GigStatus(str, enum.Enum):
-    pending = "pending"
-    completed = "completed"
-    cancelled = "cancelled"
-
 class Client(Base):
     __tablename__ = "clients"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, nullable=False)
     name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False, unique=True)
+    status= Column(Enum(ClientStatus), default=ClientStatus.active)
     phone = Column(String(20))
     business_id = Column(String(50))
     note = Column(String(500))
@@ -30,20 +19,20 @@ class Client(Base):
 
 class Gig(Base):
     __tablename__ = "gigs"
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True, nullable=False)
     client_id = Column(Integer, ForeignKey("clients.id"))
     title = Column(String(200))
     wage = Column(Numeric(10, 2), nullable=False)
     location = Column(String(100))
     description = Column(String(500))
-    gig_status = Column(Enum(GigStatus), default=GigStatus.pending)
+    status = Column(Enum(GigStatus), default=GigStatus.pending)
 
     client = relationship("Client", back_populates="gigs")
     invoice = relationship("Invoice", back_populates="gig", uselist=False)
 
 class Invoice(Base):
     __tablename__ = "invoices"
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True, nullable=False)
     client_id = Column(Integer, ForeignKey("clients.id"), nullable=False)
     gig_id = Column(Integer, ForeignKey("gigs.id"), nullable=False)
     issue_date = Column(Date, nullable=False)
