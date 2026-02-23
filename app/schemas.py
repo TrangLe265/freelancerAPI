@@ -9,9 +9,9 @@ from datetime import date, timedelta
 class ClientCreate(BaseModel):
     name: str
     email: str
-    phone: Optional[str]
-    business_id: Optional[str]
-    note: Optional[str]
+    phone: Optional[str] = None
+    business_id: Optional[str] = None
+    note: Optional[str] = None
 
 class ClientUpdate(BaseModel):
     name: Optional[str]=None

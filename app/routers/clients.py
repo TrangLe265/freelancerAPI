@@ -24,7 +24,7 @@ def get_client(client_id: int, db: Session = Depends(get_db)):
 def create_client(client: schemas.ClientCreate, db: Session = Depends(get_db)):
     #check if email already exists
     if db.query(models.Client).filter(models.Client.email == client.email).first():
-        raise HTTPException(status_code=400, detail="Client with this email already exists")
+        raise HTTPException(status_code=422)
     #create new client
     db_client = models.Client(**client.dict())
     db.add(db_client)

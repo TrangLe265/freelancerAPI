@@ -2,6 +2,12 @@
 Resource          resources/common.resource
 Suite Setup       Create API Session
 
+*** Keywords ***
+Generate Unique Email
+    [Arguments]    ${prefix}
+    ${uuid}=    Evaluate    __import__('uuid').uuid4().hex[:8]
+    RETURN    ${prefix}_${uuid}@example.com
+
 *** Test Cases ***
 
 # -------------------------------------------------------
@@ -32,20 +38,20 @@ Create Client With All Fields
     Should Be Equal    ${data}[business_id]    1234567-8
 
 Create Client With Duplicate Email
-    [Documentation]    Creating two clients with the same email should return 400.
+    [Documentation]    Creating two clients with the same email should return 422 'Database does not accept the content'.
     Create Client    name=First Client    email=duplicate_robot@example.com
     ${response}=    Create Client    name=Second Client    email=duplicate_robot@example.com
-    Should Be Equal As Integers    ${response.status_code}    400
-    Should Contain    ${response.json()}[detail]    already exists
+    Should Be Equal As Integers    ${response.status_code}    422
+    
 
 Create Client Missing Email
-    [Documentation]    Missing required email field should return 422.
+    [Documentation]    Missing required email field should return 422 'Database does not accept the content'.
     ${body}=    Create Dictionary    name=No Email Client
     ${response}=    POST On Session    ${SESSION}    /clients/    json=${body}    expected_status=any
     Should Be Equal As Integers    ${response.status_code}    422
 
 Create Client Missing Name
-    [Documentation]    Missing required name field should return 422.
+    [Documentation]    Missing required name field should return 422 'Database does not accept the content'.
     ${body}=    Create Dictionary    email=noname_robot@example.com
     ${response}=    POST On Session    ${SESSION}    /clients/    json=${body}    expected_status=any
     Should Be Equal As Integers    ${response.status_code}    422

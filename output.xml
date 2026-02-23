@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.9.6 on darwin)" generated="2026-02-23T11:22:44.007283" rpa="false" schemaversion="5">
-<suite id="s1" name="Robot Tests" source="/Users/chloeeee/Desktop/Portfolio/pythonProjects/Gig&amp;InvoiceManagement/fastAPI/robot_tests">
-<suite id="s1-s1" name="Test Clients" source="/Users/chloeeee/Desktop/Portfolio/pythonProjects/Gig&amp;InvoiceManagement/fastAPI/robot_tests/test_clients.robot">
+<robot generator="Robot 7.4.1 (Python 3.9.6 on darwin)" generated="2026-02-23T13:54:51.367066" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Clients" source="/Users/chloeeee/Desktop/Portfolio/pythonProjects/Gig&amp;InvoiceManagement/fastAPI/robot_tests/test_clients.robot">
 <kw name="Create API Session" owner="common" type="SETUP">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.069389" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-02-23T13:54:51.430097" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>${SESSION}</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-23T11:22:44.069292" elapsed="0.000328"/>
+<status status="PASS" start="2026-02-23T13:54:51.429982" elapsed="0.000220"/>
 </kw>
-<status status="PASS" start="2026-02-23T11:22:44.069035" elapsed="0.000662"/>
+<status status="PASS" start="2026-02-23T13:54:51.429710" elapsed="0.000535"/>
 </kw>
-<test id="s1-s1-t1" name="Create Client Successfully" line="11">
+<test id="s1-t1" name="Create Client Successfully" line="17">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.070684" level="INFO">${body} = {'name': 'Acme Corp', 'email': 'acme_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.431114" level="INFO">${body} = {'name': 'Acme Corp', 'email': 'acme_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.070356" elapsed="0.000344"/>
+<status status="PASS" start="2026-02-23T13:54:51.430818" elapsed="0.000310"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -28,11 +27,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.073254" elapsed="0.000014"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.432798" elapsed="0.000013"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.070749" elapsed="0.002542"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.431172" elapsed="0.001661"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.070735" elapsed="0.002568"/>
+<status status="PASS" start="2026-02-23T13:54:51.431159" elapsed="0.001688"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -40,11 +39,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.073410" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.432956" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.073332" elapsed="0.000104"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.432874" elapsed="0.000107"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.073325" elapsed="0.000123"/>
+<status status="PASS" start="2026-02-23T13:54:51.432867" elapsed="0.000123"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -52,94 +51,94 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.073538" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.433082" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.073470" elapsed="0.000091"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.433012" elapsed="0.000093"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.073464" elapsed="0.000106"/>
+<status status="PASS" start="2026-02-23T13:54:51.433006" elapsed="0.000108"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.079390" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.442211" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '56', 'Content-Type': 'application/json'} 
  body=b'{"name": "Acme Corp", "email": "acme_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.079545" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '398', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Acme Corp","email":"acme_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Acme Corp","email":"acme_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Acme Corp","email":"acme_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.442268" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '122', 'content-type': 'application/json'} 
+ body={"name":"Acme Corp","email":"acme_robot@example.com","phone":null,"business_id":null,"note":null,"id":1,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.079734" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.442341" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.073607" elapsed="0.006152"/>
+<status status="PASS" start="2026-02-23T13:54:51.433152" elapsed="0.009202"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.079810" elapsed="0.000032"/>
+<status status="PASS" start="2026-02-23T13:54:51.442398" elapsed="0.000025"/>
 </return>
-<msg time="2026-02-23T11:22:44.079920" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.442494" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>name=Acme Corp</arg>
 <arg>email=acme_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.070142" elapsed="0.009790"/>
+<status status="PASS" start="2026-02-23T13:54:51.430619" elapsed="0.011886"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.080422" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.442922" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-02-23T11:22:44.080534" level="FAIL">422 != 200</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.080084" elapsed="0.000486">422 != 200</status>
+<status status="PASS" start="2026-02-23T13:54:51.442613" elapsed="0.000438"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.443612" level="INFO">${data} = {'name': 'Acme Corp', 'email': 'acme_robot@example.com', 'phone': None, 'business_id': None, 'note': None, 'id': 1, 'status': 'active'}</msg>
 <var>${data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.080652" elapsed="0.000011"/>
+<status status="PASS" start="2026-02-23T13:54:51.443272" elapsed="0.000354"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${data}[name]</arg>
 <arg>Acme Corp</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.080720" elapsed="0.000009"/>
+<status status="PASS" start="2026-02-23T13:54:51.443693" elapsed="0.000136"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${data}[email]</arg>
 <arg>acme_robot@example.com</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.080781" elapsed="0.000007"/>
+<status status="PASS" start="2026-02-23T13:54:51.443888" elapsed="0.000122"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${data}[status]</arg>
 <arg>active</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.080851" elapsed="0.000009"/>
+<status status="PASS" start="2026-02-23T13:54:51.444065" elapsed="0.000117"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${data}</arg>
 <arg>id</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.080911" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.444238" elapsed="0.000078"/>
 </kw>
 <doc>Happy path: valid client should be created and return id and active status.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.069728" elapsed="0.011276">422 != 200</status>
+<status status="PASS" start="2026-02-23T13:54:51.430276" elapsed="0.014110"/>
 </test>
-<test id="s1-s1-t2" name="Create Client With All Fields" line="21">
+<test id="s1-t2" name="Create Client With All Fields" line="27">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.081792" level="INFO">${body} = {'name': 'Full Client', 'email': 'full_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.445122" level="INFO">${body} = {'name': 'Full Client', 'email': 'full_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.081597" elapsed="0.000209"/>
+<status status="PASS" start="2026-02-23T13:54:51.444943" elapsed="0.000192"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -147,11 +146,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.081945" elapsed="0.000147"/>
+<status status="PASS" start="2026-02-23T13:54:51.445271" elapsed="0.000131"/>
 </kw>
-<status status="PASS" start="2026-02-23T11:22:44.081845" elapsed="0.000267"/>
+<status status="PASS" start="2026-02-23T13:54:51.445174" elapsed="0.000246"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.081835" elapsed="0.000288"/>
+<status status="PASS" start="2026-02-23T13:54:51.445164" elapsed="0.000268"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -159,11 +158,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.082224" elapsed="0.000098"/>
+<status status="PASS" start="2026-02-23T13:54:51.445530" elapsed="0.000093"/>
 </kw>
-<status status="PASS" start="2026-02-23T11:22:44.082148" elapsed="0.000229"/>
+<status status="PASS" start="2026-02-23T13:54:51.445457" elapsed="0.000182"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.082141" elapsed="0.000249"/>
+<status status="PASS" start="2026-02-23T13:54:51.445450" elapsed="0.000198"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -171,85 +170,85 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.082491" elapsed="0.000099"/>
+<status status="PASS" start="2026-02-23T13:54:51.445740" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-02-23T11:22:44.082416" elapsed="0.000192"/>
+<status status="PASS" start="2026-02-23T13:54:51.445671" elapsed="0.000206"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.082408" elapsed="0.000211"/>
+<status status="PASS" start="2026-02-23T13:54:51.445664" elapsed="0.000223"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.085946" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.449628" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '136', 'Content-Type': 'application/json'} 
  body=b'{"name": "Full Client", "email": "full_robot@example.com", "phone": "+358401234567", "business_id": "1234567-8", "note": "VIP customer"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.085987" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=400, reason=Bad Request 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '50', 'content-type': 'application/json'} 
- body={"detail":"Client with this email already exists"} 
+<msg time="2026-02-23T13:54:51.449669" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '152', 'content-type': 'application/json'} 
+ body={"name":"Full Client","email":"full_robot@example.com","phone":"+358401234567","business_id":"1234567-8","note":"VIP customer","id":2,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.086045" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-02-23T13:54:51.449732" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.082658" elapsed="0.003399"/>
+<status status="PASS" start="2026-02-23T13:54:51.445926" elapsed="0.003818"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.086096" elapsed="0.000019"/>
+<status status="PASS" start="2026-02-23T13:54:51.449782" elapsed="0.000022"/>
 </return>
-<msg time="2026-02-23T11:22:44.086179" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-02-23T13:54:51.449871" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>name=Full Client</arg>
 <arg>email=full_robot@example.com</arg>
 <arg>phone=+358401234567</arg>
 <arg>business_id=1234567-8</arg>
 <arg>note=VIP customer</arg>
-<status status="PASS" start="2026-02-23T11:22:44.081396" elapsed="0.004795"/>
+<status status="PASS" start="2026-02-23T13:54:51.444752" elapsed="0.005131"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.086608" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.450252" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-02-23T11:22:44.086658" level="FAIL">400 != 200</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.086305" elapsed="0.000384">400 != 200</status>
+<status status="PASS" start="2026-02-23T13:54:51.449972" elapsed="0.000308"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.450595" level="INFO">${data} = {'name': 'Full Client', 'email': 'full_robot@example.com', 'phone': '+358401234567', 'business_id': '1234567-8', 'note': 'VIP customer', 'id': 2, 'status': 'active'}</msg>
 <var>${data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.086764" elapsed="0.000011"/>
+<status status="PASS" start="2026-02-23T13:54:51.450347" elapsed="0.000260"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${data}[phone]</arg>
 <arg>+358401234567</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.086831" elapsed="0.000009"/>
+<status status="PASS" start="2026-02-23T13:54:51.450666" elapsed="0.000123"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${data}[business_id]</arg>
 <arg>1234567-8</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.086890" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.450845" elapsed="0.000116"/>
 </kw>
 <doc>Client created with all optional fields should return them in response.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.081104" elapsed="0.005871">400 != 200</status>
+<status status="PASS" start="2026-02-23T13:54:51.444478" elapsed="0.006546"/>
 </test>
-<test id="s1-s1-t3" name="Create Client With Duplicate Email" line="34">
+<test id="s1-t3" name="Create Client With Duplicate Email" line="40">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.087781" level="INFO">${body} = {'name': 'First Client', 'email': 'duplicate_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.452188" level="INFO">${body} = {'name': 'First Client', 'email': 'duplicate_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.087519" elapsed="0.000276"/>
+<status status="PASS" start="2026-02-23T13:54:51.451604" elapsed="0.000596"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -257,11 +256,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.087927" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452334" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.087837" elapsed="0.000114"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452240" elapsed="0.000119"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.087823" elapsed="0.000139"/>
+<status status="PASS" start="2026-02-23T13:54:51.452230" elapsed="0.000138"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -269,11 +268,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.088054" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452460" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.087984" elapsed="0.000092"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452390" elapsed="0.000093"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.087978" elapsed="0.000107"/>
+<status status="PASS" start="2026-02-23T13:54:51.452384" elapsed="0.000108"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -281,48 +280,48 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.088172" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452575" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.088106" elapsed="0.000089"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.452512" elapsed="0.000085"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.088099" elapsed="0.000104"/>
+<status status="PASS" start="2026-02-23T13:54:51.452506" elapsed="0.000099"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.089769" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.456083" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '64', 'Content-Type': 'application/json'} 
  body=b'{"name": "First Client", "email": "duplicate_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.089795" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '422', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"First Client","email":"duplicate_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"First Client","email":"duplicate_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"First Client","email":"duplicate_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.456128" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '130', 'content-type': 'application/json'} 
+ body={"name":"First Client","email":"duplicate_robot@example.com","phone":null,"business_id":null,"note":null,"id":3,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.089844" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.456199" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.088238" elapsed="0.001618"/>
+<status status="PASS" start="2026-02-23T13:54:51.452640" elapsed="0.003573"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.089883" elapsed="0.000014"/>
+<status status="PASS" start="2026-02-23T13:54:51.456252" elapsed="0.000021"/>
 </return>
 <arg>name=First Client</arg>
 <arg>email=duplicate_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.087326" elapsed="0.002616"/>
+<status status="PASS" start="2026-02-23T13:54:51.451407" elapsed="0.004922"/>
 </kw>
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.091110" level="INFO">${body} = {'name': 'Second Client', 'email': 'duplicate_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.457337" level="INFO">${body} = {'name': 'Second Client', 'email': 'duplicate_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.090698" elapsed="0.000428"/>
+<status status="PASS" start="2026-02-23T13:54:51.456761" elapsed="0.000627"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -330,11 +329,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091315" elapsed="0.000037"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.457715" elapsed="0.000012"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091171" elapsed="0.000260"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.457465" elapsed="0.000281"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.091159" elapsed="0.000312"/>
+<status status="PASS" start="2026-02-23T13:54:51.457442" elapsed="0.000317"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -342,11 +341,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091585" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.457907" elapsed="0.000010"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091502" elapsed="0.000109"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.457784" elapsed="0.000151"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.091494" elapsed="0.000127"/>
+<status status="PASS" start="2026-02-23T13:54:51.457777" elapsed="0.000167"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -354,150 +353,143 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091709" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.458041" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.091642" elapsed="0.000094"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.457967" elapsed="0.000098"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.091636" elapsed="0.000109"/>
+<status status="PASS" start="2026-02-23T13:54:51.457961" elapsed="0.000113"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.093648" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.460312" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
  body=b'{"name": "Second Client", "email": "duplicate_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.093750" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.460348" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
  status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Second Client","email":"duplicate_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Second Client","email":"duplicate_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Second Client","email":"duplicate_robot@example.com"}}]} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '33', 'content-type': 'application/json'} 
+ body={"detail":"Unprocessable Entity"} 
  </msg>
-<msg time="2026-02-23T11:22:44.093846" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.460631" level="INFO">${response} = &lt;Response [422]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.091781" elapsed="0.002115"/>
+<status status="PASS" start="2026-02-23T13:54:51.458110" elapsed="0.002570"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.093970" elapsed="0.000023"/>
+<status status="PASS" start="2026-02-23T13:54:51.460777" elapsed="0.000041"/>
 </return>
-<msg time="2026-02-23T11:22:44.094067" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.460940" level="INFO">${response} = &lt;Response [422]&gt;</msg>
 <var>${response}</var>
 <arg>name=Second Client</arg>
 <arg>email=duplicate_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.090149" elapsed="0.003930"/>
+<status status="PASS" start="2026-02-23T13:54:51.456517" elapsed="0.004458"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.094470" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.461540" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-02-23T11:22:44.094520" level="FAIL">422 != 400</msg>
 <arg>${response.status_code}</arg>
-<arg>400</arg>
+<arg>422</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.094182" elapsed="0.000376">422 != 400</status>
+<status status="PASS" start="2026-02-23T13:54:51.461252" elapsed="0.000318"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${response.json()}[detail]</arg>
-<arg>already exists</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.094634" elapsed="0.000011"/>
-</kw>
-<doc>Creating two clients with the same email should return 400.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.087064" elapsed="0.007669">422 != 400</status>
+<doc>Creating two clients with the same email should return 422 'Database does not accept the content'.</doc>
+<status status="PASS" start="2026-02-23T13:54:51.451110" elapsed="0.010546"/>
 </test>
-<test id="s1-s1-t4" name="Create Client Missing Email" line="41">
+<test id="s1-t4" name="Create Client Missing Email" line="47">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.095140" level="INFO">${body} = {'name': 'No Email Client'}</msg>
+<msg time="2026-02-23T13:54:51.462135" level="INFO">${body} = {'name': 'No Email Client'}</msg>
 <var>${body}</var>
 <arg>name=No Email Client</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.095002" elapsed="0.000150"/>
+<status status="PASS" start="2026-02-23T13:54:51.461986" elapsed="0.000163"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.097039" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.464213" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '27', 'Content-Type': 'application/json'} 
  body=b'{"name": "No Email Client"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.097107" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.464256" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
  status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '417', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","email"],"msg":"Field required","input":{"name":"No Email Client"}},{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"No Email Client"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"No Email Client"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"No Email Client"}}]} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '112', 'content-type': 'application/json'} 
+ body={"detail":[{"type":"missing","loc":["body","email"],"msg":"Field required","input":{"name":"No Email Client"}}]} 
  </msg>
-<msg time="2026-02-23T11:22:44.097216" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.464345" level="INFO">${response} = &lt;Response [422]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.095211" elapsed="0.002026"/>
+<status status="PASS" start="2026-02-23T13:54:51.462211" elapsed="0.002147"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.097805" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.464974" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>422</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.097440" elapsed="0.000399"/>
+<status status="PASS" start="2026-02-23T13:54:51.464665" elapsed="0.000336"/>
 </kw>
-<doc>Missing required email field should return 422.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.094824" elapsed="0.003092"/>
+<doc>Missing required email field should return 422 'Database does not accept the content'.</doc>
+<status status="PASS" start="2026-02-23T13:54:51.461751" elapsed="0.003334"/>
 </test>
-<test id="s1-s1-t5" name="Create Client Missing Name" line="47">
+<test id="s1-t5" name="Create Client Missing Name" line="53">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.098423" level="INFO">${body} = {'email': 'noname_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.465491" level="INFO">${body} = {'email': 'noname_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>email=noname_robot@example.com</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.098262" elapsed="0.000174"/>
+<status status="PASS" start="2026-02-23T13:54:51.465364" elapsed="0.000139"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.100749" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.467655" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '37', 'Content-Type': 'application/json'} 
  body=b'{"email": "noname_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.100791" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.467688" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
  status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '456', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","name"],"msg":"Field required","input":{"email":"noname_robot@example.com"}},{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"email":"noname_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"email":"noname_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"email":"noname_robot@example.com"}}]} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '121', 'content-type': 'application/json'} 
+ body={"detail":[{"type":"missing","loc":["body","name"],"msg":"Field required","input":{"email":"noname_robot@example.com"}}]} 
  </msg>
-<msg time="2026-02-23T11:22:44.100907" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.467740" level="INFO">${response} = &lt;Response [422]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.098522" elapsed="0.002400"/>
+<status status="PASS" start="2026-02-23T13:54:51.465559" elapsed="0.002193"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.101332" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.468265" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>422</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.101040" elapsed="0.000322"/>
+<status status="PASS" start="2026-02-23T13:54:51.467892" elapsed="0.000443"/>
 </kw>
-<doc>Missing required name field should return 422.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.098066" elapsed="0.003363"/>
+<doc>Missing required name field should return 422 'Database does not accept the content'.</doc>
+<status status="PASS" start="2026-02-23T13:54:51.465178" elapsed="0.003363"/>
 </test>
-<test id="s1-s1-t6" name="Get All Clients Returns List" line="57">
+<test id="s1-t6" name="Get All Clients Returns List" line="63">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.102161" level="INFO">${body} = {'name': 'List Client', 'email': 'list_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.469391" level="INFO">${body} = {'name': 'List Client', 'email': 'list_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.101976" elapsed="0.000198"/>
+<status status="PASS" start="2026-02-23T13:54:51.469204" elapsed="0.000200"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -505,11 +497,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102315" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469544" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102215" elapsed="0.000126"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469444" elapsed="0.000157"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.102204" elapsed="0.000148"/>
+<status status="PASS" start="2026-02-23T13:54:51.469433" elapsed="0.000179"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -517,11 +509,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102562" elapsed="0.000010"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469708" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102375" elapsed="0.000213"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469634" elapsed="0.000097"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.102368" elapsed="0.000230"/>
+<status status="PASS" start="2026-02-23T13:54:51.469628" elapsed="0.000111"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -529,101 +521,101 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102690" elapsed="0.000007"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469826" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.102621" elapsed="0.000091"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.469759" elapsed="0.000090"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.102615" elapsed="0.000106"/>
+<status status="PASS" start="2026-02-23T13:54:51.469754" elapsed="0.000103"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.105064" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.473259" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '58', 'Content-Type': 'application/json'} 
  body=b'{"name": "List Client", "email": "list_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.105101" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '404', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"List Client","email":"list_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"List Client","email":"list_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"List Client","email":"list_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.473293" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '124', 'content-type': 'application/json'} 
+ body={"name":"List Client","email":"list_robot@example.com","phone":null,"business_id":null,"note":null,"id":4,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.105164" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.473351" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.102755" elapsed="0.002422"/>
+<status status="PASS" start="2026-02-23T13:54:51.469939" elapsed="0.003425"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.105213" elapsed="0.000021"/>
+<status status="PASS" start="2026-02-23T13:54:51.473398" elapsed="0.000019"/>
 </return>
 <arg>name=List Client</arg>
 <arg>email=list_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.101773" elapsed="0.003520"/>
+<status status="PASS" start="2026-02-23T13:54:51.468998" elapsed="0.004471"/>
 </kw>
 <kw name="Get All Clients" owner="common">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.107902" level="INFO">GET Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.475488" level="INFO">GET Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-02-23T11:22:44.107940" level="INFO">GET Response : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.475519" level="INFO">GET Response : url=http://127.0.0.1:8000/clients/ 
  status=200, reason=OK 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '649', 'content-type': 'application/json'} 
- body=[{"name":"Nordic Web Studio","email":"contact@nordicweb.fi","phone":"+358401234567","business_id":"FI12345678","note":"Long-term client, monthly contracts","id":1,"status":"active"},{"name":"Helsinki Fitness Club","email":"admin@helsinkifit.fi","phone":"+358409876543","business_id":"FI87654321","note":"Event-based gigs","id":2,"status":"active"},{"name":"Solo Startup Oy","email":"founder@solostartup.io","phone":null,"business_id":null,"note":"Early-stage startup","id":3,"status":"inactive"},{"name":"Full Client","email":"full_robot@example.com","phone":"+358401234567","business_id":"1234567-8","note":"VIP customer","id":4,"status":"active"}] 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '533', 'content-type': 'application/json'} 
+ body=[{"name":"Acme Corp","email":"acme_robot@example.com","phone":null,"business_id":null,"note":null,"id":1,"status":"active"},{"name":"Full Client","email":"full_robot@example.com","phone":"+358401234567","business_id":"1234567-8","note":"VIP customer","id":2,"status":"active"},{"name":"First Client","email":"duplicate_robot@example.com","phone":null,"business_id":null,"note":null,"id":3,"status":"active"},{"name":"List Client","email":"list_robot@example.com","phone":null,"business_id":null,"note":null,"id":4,"status":"active"}] 
  </msg>
-<msg time="2026-02-23T11:22:44.108001" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-02-23T13:54:51.475571" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.105678" elapsed="0.002336"/>
+<status status="PASS" start="2026-02-23T13:54:51.473690" elapsed="0.001893"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.108047" elapsed="0.000020"/>
+<status status="PASS" start="2026-02-23T13:54:51.475611" elapsed="0.000017"/>
 </return>
-<msg time="2026-02-23T11:22:44.108130" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-02-23T13:54:51.475687" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<status status="PASS" start="2026-02-23T11:22:44.105541" elapsed="0.002600"/>
+<status status="PASS" start="2026-02-23T13:54:51.473576" elapsed="0.002122"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.108514" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.476034" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.108230" elapsed="0.000314"/>
+<status status="PASS" start="2026-02-23T13:54:51.475764" elapsed="0.000298"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.108866" level="INFO">${data} = [{'name': 'Nordic Web Studio', 'email': 'contact@nordicweb.fi', 'phone': '+358401234567', 'business_id': 'FI12345678', 'note': 'Long-term client, monthly contracts', 'id': 1, 'status': 'active'}, {'na...</msg>
+<msg time="2026-02-23T13:54:51.476370" level="INFO">${data} = [{'name': 'Acme Corp', 'email': 'acme_robot@example.com', 'phone': None, 'business_id': None, 'note': None, 'id': 1, 'status': 'active'}, {'name': 'Full Client', 'email': 'full_robot@example.com', 'ph...</msg>
 <var>${data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.108607" elapsed="0.000272"/>
+<status status="PASS" start="2026-02-23T13:54:51.476121" elapsed="0.000262"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.109166" level="INFO">Length is 4.</msg>
+<msg time="2026-02-23T13:54:51.476609" level="INFO">Length is 4.</msg>
 <arg>${data}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.108976" elapsed="0.000212"/>
+<status status="PASS" start="2026-02-23T13:54:51.476437" elapsed="0.000192"/>
 </kw>
 <doc>After creating a client, GET /clients/ should return a non-empty list.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.101511" elapsed="0.007746"/>
+<status status="PASS" start="2026-02-23T13:54:51.468703" elapsed="0.007988"/>
 </test>
-<test id="s1-s1-t7" name="Get Client By Valid ID" line="65">
+<test id="s1-t7" name="Get Client By Valid ID" line="71">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.109959" level="INFO">${body} = {'name': 'Findable Client', 'email': 'find_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.477470" level="INFO">${body} = {'name': 'Findable Client', 'email': 'find_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.109785" elapsed="0.000186"/>
+<status status="PASS" start="2026-02-23T13:54:51.477298" elapsed="0.000184"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -631,11 +623,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110094" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477602" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110008" elapsed="0.000110"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477518" elapsed="0.000108"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.109999" elapsed="0.000129"/>
+<status status="PASS" start="2026-02-23T13:54:51.477508" elapsed="0.000128"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -643,11 +635,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110215" elapsed="0.000007"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477724" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110149" elapsed="0.000087"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477658" elapsed="0.000089"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.110143" elapsed="0.000102"/>
+<status status="PASS" start="2026-02-23T13:54:51.477651" elapsed="0.000104"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -655,126 +647,153 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110325" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477838" elapsed="0.000007"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.110264" elapsed="0.000084"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.477775" elapsed="0.000084"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.110259" elapsed="0.000097"/>
+<status status="PASS" start="2026-02-23T13:54:51.477769" elapsed="0.000098"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.112603" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.481761" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '62', 'Content-Type': 'application/json'} 
  body=b'{"name": "Findable Client", "email": "find_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.112635" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '416', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Findable Client","email":"find_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Findable Client","email":"find_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Findable Client","email":"find_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.481868" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '128', 'content-type': 'application/json'} 
+ body={"name":"Findable Client","email":"find_robot@example.com","phone":null,"business_id":null,"note":null,"id":5,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.112688" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.481942" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.110391" elapsed="0.002309"/>
+<status status="PASS" start="2026-02-23T13:54:51.477953" elapsed="0.004003"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.112732" elapsed="0.000016"/>
+<status status="PASS" start="2026-02-23T13:54:51.481997" elapsed="0.000024"/>
 </return>
-<msg time="2026-02-23T11:22:44.112808" level="INFO">${create} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.482091" level="INFO">${create} = &lt;Response [200]&gt;</msg>
 <var>${create}</var>
 <arg>name=Findable Client</arg>
 <arg>email=find_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.109599" elapsed="0.003220"/>
+<status status="PASS" start="2026-02-23T13:54:51.477115" elapsed="0.004987"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.113273" level="FAIL">Dictionary '${create.json()}' has no key 'id'.</msg>
+<msg time="2026-02-23T13:54:51.482497" level="INFO">${client_id} = 5</msg>
 <var>${client_id}</var>
 <arg>${create.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.112970" elapsed="0.000324">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.482188" elapsed="0.000321"/>
 </kw>
 <kw name="Get Client By ID" owner="common">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-23T13:54:51.485580" level="INFO">GET Request : url=http://127.0.0.1:8000/clients/5 
+ path_url=/clients/5 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-23T13:54:51.485617" level="INFO">GET Response : url=http://127.0.0.1:8000/clients/5 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '128', 'content-type': 'application/json'} 
+ body={"name":"Findable Client","email":"find_robot@example.com","phone":null,"business_id":null,"note":null,"id":5,"status":"active"} 
+ </msg>
+<msg time="2026-02-23T13:54:51.485677" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION}</arg>
+<arg>/clients/${client_id}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-23T13:54:51.482734" elapsed="0.002955"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-02-23T13:54:51.485723" elapsed="0.000021"/>
+</return>
+<msg time="2026-02-23T13:54:51.485806" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${client_id}</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.113401" elapsed="0.000013"/>
+<status status="PASS" start="2026-02-23T13:54:51.482604" elapsed="0.003213"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.486282" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.113469" elapsed="0.000009"/>
+<status status="PASS" start="2026-02-23T13:54:51.485899" elapsed="0.000414"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${response.json()}[email]</arg>
 <arg>find_robot@example.com</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.113532" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.486394" elapsed="0.000266"/>
 </kw>
 <doc>Should return the correct client when given a valid ID.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.109343" elapsed="0.004274">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.476874" elapsed="0.009859"/>
 </test>
-<test id="s1-s1-t8" name="Get Client By Invalid ID" line="73">
+<test id="s1-t8" name="Get Client By Invalid ID" line="79">
 <kw name="Get Client By ID" owner="common">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.117270" level="INFO">GET Request : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.489442" level="INFO">GET Request : url=http://127.0.0.1:8000/clients/99999 
  path_url=/clients/99999 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-02-23T11:22:44.117314" level="INFO">GET Response : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.489489" level="INFO">GET Response : url=http://127.0.0.1:8000/clients/99999 
  status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '29', 'content-type': 'application/json'} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '29', 'content-type': 'application/json'} 
  body={"detail":"Client not found"} 
  </msg>
-<msg time="2026-02-23T11:22:44.117387" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-02-23T13:54:51.489552" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/${client_id}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.114089" elapsed="0.003311"/>
+<status status="PASS" start="2026-02-23T13:54:51.487190" elapsed="0.002376"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.117438" elapsed="0.000022"/>
+<status status="PASS" start="2026-02-23T13:54:51.489599" elapsed="0.000020"/>
 </return>
-<msg time="2026-02-23T11:22:44.117529" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-02-23T13:54:51.489682" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>99999</arg>
-<status status="PASS" start="2026-02-23T11:22:44.113974" elapsed="0.003566"/>
+<status status="PASS" start="2026-02-23T13:54:51.487077" elapsed="0.002616"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.117912" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.490042" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.117625" elapsed="0.000316"/>
+<status status="PASS" start="2026-02-23T13:54:51.489775" elapsed="0.000294"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.json()}[detail]</arg>
 <arg>not found</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.118006" elapsed="0.000705"/>
+<status status="PASS" start="2026-02-23T13:54:51.490126" elapsed="0.000254"/>
 </kw>
 <doc>Non-existent client ID should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.113705" elapsed="0.005202"/>
+<status status="PASS" start="2026-02-23T13:54:51.486890" elapsed="0.003555"/>
 </test>
-<test id="s1-s1-t9" name="Update Client Name" line="83">
+<test id="s1-t9" name="Update Client Name" line="89">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.119802" level="INFO">${body} = {'name': 'Old Name', 'email': 'update_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.491137" level="INFO">${body} = {'name': 'Old Name', 'email': 'update_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.119606" elapsed="0.000247"/>
+<status status="PASS" start="2026-02-23T13:54:51.490960" elapsed="0.000189"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -782,11 +801,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.120008" elapsed="0.000010"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491277" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.119894" elapsed="0.000141"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491187" elapsed="0.000114"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.119883" elapsed="0.000177"/>
+<status status="PASS" start="2026-02-23T13:54:51.491177" elapsed="0.000134"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -794,11 +813,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.120184" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491400" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.120092" elapsed="0.000118"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491333" elapsed="0.000090"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.120083" elapsed="0.000137"/>
+<status status="PASS" start="2026-02-23T13:54:51.491327" elapsed="0.000105"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -806,133 +825,148 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.120312" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491521" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.120242" elapsed="0.000093"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.491452" elapsed="0.000126"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.120236" elapsed="0.000108"/>
+<status status="PASS" start="2026-02-23T13:54:51.491446" elapsed="0.000142"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.122350" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.494981" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '57', 'Content-Type': 'application/json'} 
  body=b'{"name": "Old Name", "email": "update_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.122394" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '401', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Old Name","email":"update_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Old Name","email":"update_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Old Name","email":"update_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.495024" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '123', 'content-type': 'application/json'} 
+ body={"name":"Old Name","email":"update_robot@example.com","phone":null,"business_id":null,"note":null,"id":6,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.122452" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.495106" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.120380" elapsed="0.002084"/>
+<status status="PASS" start="2026-02-23T13:54:51.491625" elapsed="0.003494"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.122499" elapsed="0.000020"/>
+<status status="PASS" start="2026-02-23T13:54:51.495155" elapsed="0.000020"/>
 </return>
-<msg time="2026-02-23T11:22:44.122585" level="INFO">${create} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.495240" level="INFO">${create} = &lt;Response [200]&gt;</msg>
 <var>${create}</var>
 <arg>name=Old Name</arg>
 <arg>email=update_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.119397" elapsed="0.003200"/>
+<status status="PASS" start="2026-02-23T13:54:51.490771" elapsed="0.004480"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.123025" level="FAIL">Dictionary '${create.json()}' has no key 'id'.</msg>
+<msg time="2026-02-23T13:54:51.495639" level="INFO">${client_id} = 6</msg>
 <var>${client_id}</var>
 <arg>${create.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.122708" elapsed="0.000338">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.495334" elapsed="0.000317"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.495844" level="INFO">${body} = {'name': 'New Name'}</msg>
 <var>${body}</var>
 <arg>name=New Name</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.123156" elapsed="0.000048"/>
+<status status="PASS" start="2026-02-23T13:54:51.495715" elapsed="0.000141"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-02-23T13:54:51.499912" level="INFO">PUT Request : url=http://127.0.0.1:8000/clients/6 
+ path_url=/clients/6 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '20', 'Content-Type': 'application/json'} 
+ body=b'{"name": "New Name"}' 
+ </msg>
+<msg time="2026-02-23T13:54:51.499961" level="INFO">PUT Response : url=http://127.0.0.1:8000/clients/6 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '123', 'content-type': 'application/json'} 
+ body={"name":"New Name","email":"update_robot@example.com","phone":null,"business_id":null,"note":null,"id":6,"status":"active"} 
+ </msg>
+<msg time="2026-02-23T13:54:51.500036" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/${client_id}</arg>
 <arg>json=${body}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.123269" elapsed="0.000010"/>
+<status status="PASS" start="2026-02-23T13:54:51.495910" elapsed="0.004139"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.500558" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.123334" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.500201" elapsed="0.000386"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${response.json()}[name]</arg>
 <arg>New Name</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.123391" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.500662" elapsed="0.000261"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${response.json()}[email]</arg>
 <arg>update_robot@example.com</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.123447" elapsed="0.000007"/>
+<status status="PASS" start="2026-02-23T13:54:51.500983" elapsed="0.000234"/>
 </kw>
 <doc>PUT should update name while leaving other fields unchanged.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.119116" elapsed="0.004422">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.490526" elapsed="0.010759"/>
 </test>
-<test id="s1-s1-t10" name="Update Client Not Found" line="93">
+<test id="s1-t10" name="Update Client Not Found" line="99">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.123935" level="INFO">${body} = {'name': 'Ghost'}</msg>
+<msg time="2026-02-23T13:54:51.501661" level="INFO">${body} = {'name': 'Ghost'}</msg>
 <var>${body}</var>
 <arg>name=Ghost</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.123787" elapsed="0.000160"/>
+<status status="PASS" start="2026-02-23T13:54:51.501531" elapsed="0.000141"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.127044" level="INFO">PUT Request : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.504516" level="INFO">PUT Request : url=http://127.0.0.1:8000/clients/99999 
  path_url=/clients/99999 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/json'} 
  body=b'{"name": "Ghost"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.127084" level="INFO">PUT Response : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.504559" level="INFO">PUT Response : url=http://127.0.0.1:8000/clients/99999 
  status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '47', 'content-type': 'application/json'} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '47', 'content-type': 'application/json'} 
  body={"detail":"Client with the given id not found"} 
  </msg>
-<msg time="2026-02-23T11:22:44.127151" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-02-23T13:54:51.504629" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/99999</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.124002" elapsed="0.003164"/>
+<status status="PASS" start="2026-02-23T13:54:51.501728" elapsed="0.002914"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.127592" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.505087" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.127299" elapsed="0.000322"/>
+<status status="PASS" start="2026-02-23T13:54:51.504765" elapsed="0.000352"/>
 </kw>
 <doc>PUT on non-existent client should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.123631" elapsed="0.004092"/>
+<status status="PASS" start="2026-02-23T13:54:51.501371" elapsed="0.003820"/>
 </test>
-<test id="s1-s1-t11" name="Deactivate Client" line="99">
+<test id="s1-t11" name="Deactivate Client" line="105">
 <kw name="Create Client" owner="common">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.129061" level="INFO">${body} = {'name': 'Active Client', 'email': 'deactivate_robot@example.com'}</msg>
+<msg time="2026-02-23T13:54:51.505896" level="INFO">${body} = {'name': 'Active Client', 'email': 'deactivate_robot@example.com'}</msg>
 <var>${body}</var>
 <arg>name=${name}</arg>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.128610" elapsed="0.000465"/>
+<status status="PASS" start="2026-02-23T13:54:51.505715" elapsed="0.000194"/>
 </kw>
 <if>
 <branch type="IF" condition="$phone is not None">
@@ -940,11 +974,11 @@
 <arg>${body}</arg>
 <arg>phone=${phone}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129248" elapsed="0.000009"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.506049" elapsed="0.000010"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129150" elapsed="0.000122"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.505950" elapsed="0.000125"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.129138" elapsed="0.000145"/>
+<status status="PASS" start="2026-02-23T13:54:51.505939" elapsed="0.000146"/>
 </if>
 <if>
 <branch type="IF" condition="$business_id is not None">
@@ -952,11 +986,11 @@
 <arg>${body}</arg>
 <arg>business_id=${business_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129375" elapsed="0.000007"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.506179" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129306" elapsed="0.000091"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.506108" elapsed="0.000094"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.129300" elapsed="0.000106"/>
+<status status="PASS" start="2026-02-23T13:54:51.506101" elapsed="0.000110"/>
 </if>
 <if>
 <branch type="IF" condition="$note is not None">
@@ -964,2105 +998,127 @@
 <arg>${body}</arg>
 <arg>note=${note}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129491" elapsed="0.000008"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.506333" elapsed="0.000008"/>
 </kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.129426" elapsed="0.000087"/>
+<status status="NOT RUN" start="2026-02-23T13:54:51.506265" elapsed="0.000091"/>
 </branch>
-<status status="PASS" start="2026-02-23T11:22:44.129420" elapsed="0.000103"/>
+<status status="PASS" start="2026-02-23T13:54:51.506258" elapsed="0.000106"/>
 </if>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.131270" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
+<msg time="2026-02-23T13:54:51.509569" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
  path_url=/clients/ 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '66', 'Content-Type': 'application/json'} 
  body=b'{"name": "Active Client", "email": "deactivate_robot@example.com"}' 
  </msg>
-<msg time="2026-02-23T11:22:44.131295" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '428', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Active Client","email":"deactivate_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Active Client","email":"deactivate_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Active Client","email":"deactivate_robot@example.com"}}]} 
+<msg time="2026-02-23T13:54:51.509603" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '132', 'content-type': 'application/json'} 
+ body={"name":"Active Client","email":"deactivate_robot@example.com","phone":null,"business_id":null,"note":null,"id":7,"status":"active"} 
  </msg>
-<msg time="2026-02-23T11:22:44.131343" level="INFO">${response} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.509655" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/</arg>
 <arg>json=${body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.129560" elapsed="0.001794"/>
+<status status="PASS" start="2026-02-23T13:54:51.506401" elapsed="0.003267"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.131381" elapsed="0.000018"/>
+<status status="PASS" start="2026-02-23T13:54:51.509701" elapsed="0.000021"/>
 </return>
-<msg time="2026-02-23T11:22:44.131459" level="INFO">${create} = &lt;Response [422]&gt;</msg>
+<msg time="2026-02-23T13:54:51.509785" level="INFO">${create} = &lt;Response [200]&gt;</msg>
 <var>${create}</var>
 <arg>name=Active Client</arg>
 <arg>email=deactivate_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.128400" elapsed="0.003071"/>
+<status status="PASS" start="2026-02-23T13:54:51.505518" elapsed="0.004278"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.131784" level="FAIL">Dictionary '${create.json()}' has no key 'id'.</msg>
+<msg time="2026-02-23T13:54:51.510219" level="INFO">${client_id} = 7</msg>
 <var>${client_id}</var>
 <arg>${create.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.131542" elapsed="0.000259">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.509920" elapsed="0.000311"/>
 </kw>
 <kw name="PATCH On Session" owner="RequestsLibrary">
+<msg time="2026-02-23T13:54:51.514002" level="INFO">PATCH Request : url=http://127.0.0.1:8000/clients/7 
+ path_url=/clients/7 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-02-23T13:54:51.514045" level="INFO">PATCH Response : url=http://127.0.0.1:8000/clients/7 
+ status=200, reason=OK 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '134', 'content-type': 'application/json'} 
+ body={"name":"Active Client","email":"deactivate_robot@example.com","phone":null,"business_id":null,"note":null,"id":7,"status":"inactive"} 
+ </msg>
+<msg time="2026-02-23T13:54:51.514110" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/${client_id}</arg>
 <doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.131865" elapsed="0.000010"/>
+<status status="PASS" start="2026-02-23T13:54:51.510305" elapsed="0.003818"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-23T13:54:51.514506" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.131929" elapsed="0.000008"/>
+<status status="PASS" start="2026-02-23T13:54:51.514220" elapsed="0.000313"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${response.json()}[status]</arg>
 <arg>inactive</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.132107" elapsed="0.000067"/>
+<status status="PASS" start="2026-02-23T13:54:51.514598" elapsed="0.000250"/>
 </kw>
 <doc>PATCH should set client status to inactive.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.127872" elapsed="0.004607">Dictionary '${create.json()}' has no key 'id'.</status>
+<status status="PASS" start="2026-02-23T13:54:51.505277" elapsed="0.009639"/>
 </test>
-<test id="s1-s1-t12" name="Deactivate Client Not Found" line="107">
+<test id="s1-t12" name="Deactivate Client Not Found" line="113">
 <kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.135099" level="INFO">PATCH Request : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.517461" level="INFO">PATCH Request : url=http://127.0.0.1:8000/clients/99999 
  path_url=/clients/99999 
  headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2026-02-23T11:22:44.135135" level="INFO">PATCH Response : url=http://127.0.0.1:8000/clients/99999 
+<msg time="2026-02-23T13:54:51.517494" level="INFO">PATCH Response : url=http://127.0.0.1:8000/clients/99999 
  status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '29', 'content-type': 'application/json'} 
+ headers={'date': 'Mon, 23 Feb 2026 11:54:50 GMT', 'server': 'uvicorn', 'content-length': '29', 'content-type': 'application/json'} 
  body={"detail":"Client not found"} 
  </msg>
-<msg time="2026-02-23T11:22:44.135193" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-02-23T13:54:51.517544" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>${SESSION}</arg>
 <arg>/clients/99999</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.133007" elapsed="0.002198"/>
+<status status="PASS" start="2026-02-23T13:54:51.515202" elapsed="0.002353"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.135568" level="INFO">Argument types are:
+<msg time="2026-02-23T13:54:51.517959" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.135291" elapsed="0.000305"/>
+<status status="PASS" start="2026-02-23T13:54:51.517650" elapsed="0.000335"/>
 </kw>
 <doc>PATCH on non-existent client should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.132795" elapsed="0.002868"/>
+<status status="PASS" start="2026-02-23T13:54:51.515040" elapsed="0.003010"/>
 </test>
-<status status="FAIL" start="2026-02-23T11:22:44.022108" elapsed="0.113749"/>
-</suite>
-<suite id="s1-s2" name="Test Gigs" source="/Users/chloeeee/Desktop/Portfolio/pythonProjects/Gig&amp;InvoiceManagement/fastAPI/robot_tests/test_gigs.robot">
-<kw name="Create API Session" owner="common" type="SETUP">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.137381" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>${SESSION}</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-23T11:22:44.137302" elapsed="0.000165"/>
-</kw>
-<status status="PASS" start="2026-02-23T11:22:44.137213" elapsed="0.000291"/>
-</kw>
-<test id="s1-s2-t1" name="Create Gig Successfully" line="17">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.138349" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.138163" elapsed="0.000199"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138497" elapsed="0.000010"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138400" elapsed="0.000158"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.138389" elapsed="0.000181"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138672" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138596" elapsed="0.000099"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.138589" elapsed="0.000115"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138790" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.138725" elapsed="0.000087"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.138719" elapsed="0.000101"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.141404" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.141438" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.141498" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.138855" elapsed="0.002655"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.141545" elapsed="0.000022"/>
-</return>
-<msg time="2026-02-23T11:22:44.141776" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.137981" elapsed="0.003835"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.141848" elapsed="0.000024"/>
-</return>
-<msg time="2026-02-23T11:22:44.142122" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.137710" elapsed="0.004430">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Logo Design</arg>
-<arg>wage=${800}</arg>
-<arg>date=2026-04-01</arg>
-<arg>location=Remote</arg>
-<arg>description=Brand logo package</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142317" elapsed="0.000013"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142403" elapsed="0.000009"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${data}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142466" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${data}[title]</arg>
-<arg>Logo Design</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142524" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<arg>${data}[wage]</arg>
-<arg>800</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142583" elapsed="0.000009"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${data}[status]</arg>
-<arg>pending</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.142643" elapsed="0.000008"/>
-</kw>
-<doc>Happy path: valid gig linked to existing client.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.137530" elapsed="0.005204">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t2" name="Create Gig Missing Wage" line="33">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.143699" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.143501" elapsed="0.000211"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.143838" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.143747" elapsed="0.000116"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.143738" elapsed="0.000135"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.143963" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.143895" elapsed="0.000090"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.143888" elapsed="0.000106"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.144079" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.144015" elapsed="0.000087"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.144009" elapsed="0.000101"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.146468" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.146549" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.146612" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.144145" elapsed="0.002479"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.146660" elapsed="0.000018"/>
-</return>
-<msg time="2026-02-23T11:22:44.146744" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.143322" elapsed="0.003434"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.146775" elapsed="0.000011"/>
-</return>
-<msg time="2026-02-23T11:22:44.146986" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.143145" elapsed="0.003859">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=No Wage</arg>
-<arg>date=2026-04-01</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.147096" elapsed="0.000041"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.147220" elapsed="0.000011"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>422</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.147287" elapsed="0.000008"/>
-</kw>
-<doc>Wage is required — missing it should return 422.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.142942" elapsed="0.004430">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t3" name="Create Gig Missing Date" line="40">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.148553" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.148191" elapsed="0.000376"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148697" elapsed="0.000017"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148604" elapsed="0.000132"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.148595" elapsed="0.000152"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148837" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148769" elapsed="0.000090"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.148762" elapsed="0.000106"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148951" elapsed="0.000011"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.148888" elapsed="0.000088"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.148882" elapsed="0.000102"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.150609" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.150638" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.150690" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.149019" elapsed="0.001683"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.150729" elapsed="0.000018"/>
-</return>
-<msg time="2026-02-23T11:22:44.150808" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.147925" elapsed="0.002894"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.150838" elapsed="0.000010"/>
-</return>
-<msg time="2026-02-23T11:22:44.151039" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.147653" elapsed="0.003402">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=No Date</arg>
-<arg>wage=${500}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.151133" elapsed="0.000010"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.151233" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>422</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.151294" elapsed="0.000007"/>
-</kw>
-<doc>Date is required — missing it should return 422.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.147463" elapsed="0.003911">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t4" name="Get Gig By Valid ID" line="51">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.152187" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.151999" elapsed="0.000203"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152317" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152235" elapsed="0.000106"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.152226" elapsed="0.000124"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152444" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152371" elapsed="0.000095"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.152365" elapsed="0.000110"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152565" elapsed="0.000007"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.152494" elapsed="0.000091"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.152488" elapsed="0.000105"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.154701" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.154736" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.154802" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.152627" elapsed="0.002188"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.154849" elapsed="0.000018"/>
-</return>
-<msg time="2026-02-23T11:22:44.154932" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.151824" elapsed="0.003120"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.154964" elapsed="0.000011"/>
-</return>
-<msg time="2026-02-23T11:22:44.155181" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.151649" elapsed="0.003549">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Findable Gig</arg>
-<arg>wage=${600}</arg>
-<arg>date=2026-04-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.155401" elapsed="0.000013"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.155481" elapsed="0.000009"/>
-</kw>
-<kw name="Get Gig By ID" owner="common">
-<var>${response}</var>
-<arg>${gig_id}</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.155559" elapsed="0.000010"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.155620" elapsed="0.000009"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response.json()}[title]</arg>
-<arg>Findable Gig</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.155679" elapsed="0.000007"/>
-</kw>
-<doc>Should return the correct gig when given a valid ID.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.151472" elapsed="0.004285">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t5" name="Get Gig By Invalid ID" line="60">
-<kw name="Get Gig By ID" owner="common">
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.160967" level="INFO">GET Request : url=http://127.0.0.1:8000/gigs/99999 
- path_url=/gigs/99999 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-23T11:22:44.161002" level="INFO">GET Response : url=http://127.0.0.1:8000/gigs/99999 
- status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '26', 'content-type': 'application/json'} 
- body={"detail":"Gig not found"} 
- </msg>
-<msg time="2026-02-23T11:22:44.161069" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/${gig_id}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.156706" elapsed="0.004377"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.161172" elapsed="0.000020"/>
-</return>
-<msg time="2026-02-23T11:22:44.161263" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>99999</arg>
-<status status="PASS" start="2026-02-23T11:22:44.156420" elapsed="0.004856"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.161642" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>404</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.161353" elapsed="0.000318"/>
-</kw>
-<doc>Non-existent gig ID should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.156003" elapsed="0.005737"/>
-</test>
-<test id="s1-s2-t6" name="Update Gig Wage" line="69">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.162562" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.162352" elapsed="0.000228"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.162940" elapsed="0.000010"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.162802" elapsed="0.000167"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.162753" elapsed="0.000227"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.163072" elapsed="0.000007"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.163004" elapsed="0.000090"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.162998" elapsed="0.000104"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.163184" elapsed="0.000007"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.163123" elapsed="0.000083"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.163117" elapsed="0.000097"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.164771" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.164795" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.164843" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.163247" elapsed="0.001607"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.164887" elapsed="0.000017"/>
-</return>
-<msg time="2026-02-23T11:22:44.164963" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.162175" elapsed="0.002798"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.164992" elapsed="0.000010"/>
-</return>
-<msg time="2026-02-23T11:22:44.165191" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.162008" elapsed="0.003199">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Update Wage Gig</arg>
-<arg>wage=${500}</arg>
-<arg>date=2026-04-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165416" elapsed="0.000016"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165507" elapsed="0.000010"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>wage=${1200}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165577" elapsed="0.000008"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/${gig_id}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165637" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165697" elapsed="0.000009"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<arg>${response.json()}[wage]</arg>
-<arg>1200</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.165756" elapsed="0.000008"/>
-</kw>
-<doc>Should update wage and return updated gig.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.161828" elapsed="0.004018">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t7" name="Update Gig Title" line="79">
-<kw name="Create Test Client">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.166882" level="INFO">${body} = {'name': 'Gig Test Client', 'email': 'gigtest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.166498" elapsed="0.000472"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167274" elapsed="0.000010"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167143" elapsed="0.000221"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.167108" elapsed="0.000273"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167502" elapsed="0.000011"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167410" elapsed="0.000120"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.167402" elapsed="0.000138"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167677" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.167564" elapsed="0.000138"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.167557" elapsed="0.000158"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.169574" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
- body=b'{"name": "Gig Test Client", "email": "gigtest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.169607" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '425', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Gig Test Client","email":"gigtest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.169665" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.167755" elapsed="0.001921"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.169708" elapsed="0.000017"/>
-</return>
-<msg time="2026-02-23T11:22:44.169785" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>name=Gig Test Client</arg>
-<arg>email=gigtest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.166312" elapsed="0.003484"/>
-</kw>
-<return>
-<value>${response.json()}[id]</value>
-<status status="PASS" start="2026-02-23T11:22:44.169815" elapsed="0.000009"/>
-</return>
-<msg time="2026-02-23T11:22:44.170002" level="FAIL">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<doc>Helper to create a fresh client for gig tests.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.166146" elapsed="0.003871">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Old Title</arg>
-<arg>wage=${700}</arg>
-<arg>date=2026-04-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170164" elapsed="0.000013"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170238" elapsed="0.000009"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${original_wage}</var>
-<arg>${create.json()}[wage]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170297" elapsed="0.000008"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>title=New Title</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170358" elapsed="0.000007"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/${gig_id}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170413" elapsed="0.000007"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170469" elapsed="0.000007"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response.json()}[title]</arg>
-<arg>New Title</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170523" elapsed="0.000007"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<arg>${response.json()}[wage]</arg>
-<arg>${original_wage}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.170575" elapsed="0.000007"/>
-</kw>
-<doc>Should update title without affecting wage.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.165938" elapsed="0.004728">Replacing variables from keyword return value failed: Dictionary '${response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s2-t8" name="Update Gig Not Found" line="91">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.171166" level="INFO">${body} = {'title': 'Ghost Gig'}</msg>
-<var>${body}</var>
-<arg>title=Ghost Gig</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.170990" elapsed="0.000189"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.174182" level="INFO">PUT Request : url=http://127.0.0.1:8000/gigs/99999 
- path_url=/gigs/99999 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '22', 'Content-Type': 'application/json'} 
- body=b'{"title": "Ghost Gig"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.174222" level="INFO">PUT Response : url=http://127.0.0.1:8000/gigs/99999 
- status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '44', 'content-type': 'application/json'} 
- body={"detail":"Gig with the given id not found"} 
- </msg>
-<msg time="2026-02-23T11:22:44.174276" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/gigs/99999</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.171240" elapsed="0.003048"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.174792" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>404</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.174512" elapsed="0.000313"/>
-</kw>
-<doc>PUT on non-existent gig should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.170796" elapsed="0.004106"/>
-</test>
-<status status="FAIL" start="2026-02-23T11:22:44.136134" elapsed="0.038939"/>
-</suite>
-<suite id="s1-s3" name="Test Invoices" source="/Users/chloeeee/Desktop/Portfolio/pythonProjects/Gig&amp;InvoiceManagement/fastAPI/robot_tests/test_invoices.robot">
-<kw name="Create API Session" owner="common" type="SETUP">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.176715" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>${SESSION}</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-23T11:22:44.176629" elapsed="0.000174"/>
-</kw>
-<status status="PASS" start="2026-02-23T11:22:44.176535" elapsed="0.000332"/>
-</kw>
-<test id="s1-s3-t1" name="Create Invoice Successfully" line="24">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.177772" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.177584" elapsed="0.000201"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.177918" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.177825" elapsed="0.000119"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.177814" elapsed="0.000140"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.178046" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.177977" elapsed="0.000092"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.177970" elapsed="0.000108"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.178163" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.178099" elapsed="0.000087"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.178093" elapsed="0.000101"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.180176" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.180199" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.180245" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.178228" elapsed="0.002028"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.180283" elapsed="0.000017"/>
-</return>
-<msg time="2026-02-23T11:22:44.180358" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.177303" elapsed="0.003067"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.180655" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.180416" elapsed="0.000255">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181038" elapsed="0.000054"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181244" elapsed="0.000044"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181349" elapsed="0.000009"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.177125" elapsed="0.004280">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181504" elapsed="0.000012"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181574" elapsed="0.000007"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${data}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181629" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${data}[status]</arg>
-<arg>draft</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181686" elapsed="0.000007"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${data}[client_id]</arg>
-<arg>${client_id}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181738" elapsed="0.000007"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${data}[gig_id]</arg>
-<arg>${gig_id}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181788" elapsed="0.000007"/>
-</kw>
-<kw name="Dictionary Should Contain Key" owner="Collections">
-<arg>${data}</arg>
-<arg>id</arg>
-<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.181842" elapsed="0.000007"/>
-</kw>
-<doc>Happy path: valid invoice linked to existing client and gig.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.176903" elapsed="0.005077">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t2" name="Invoice Total Amount Matches Gig Wage" line="39">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.182879" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.182697" elapsed="0.000195"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.183012" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.182926" elapsed="0.000108"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.182917" elapsed="0.000127"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.183132" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.183066" elapsed="0.000087"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.183059" elapsed="0.000103"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.183249" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.183182" elapsed="0.000089"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.183176" elapsed="0.000104"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.185305" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.185337" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.185391" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.183314" elapsed="0.002089"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.185436" elapsed="0.000020"/>
-</return>
-<msg time="2026-02-23T11:22:44.185531" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.182516" elapsed="0.003026"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.185888" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.185609" elapsed="0.000297">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.186133" elapsed="0.000013"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.186194" elapsed="0.000009"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.186221" elapsed="0.000007"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.182347" elapsed="0.003919">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.186356" elapsed="0.000011"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<arg>${response.json()}[total_amount]</arg>
-<arg>1500</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.186429" elapsed="0.000008"/>
-</kw>
-<doc>total_amount in invoice response should equal the linked gig wage.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.182142" elapsed="0.004371">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t3" name="Create Invoice With Invalid Status" line="49">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.187296" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.187120" elapsed="0.000188"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.187427" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.187342" elapsed="0.000109"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.187333" elapsed="0.000127"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.187731" elapsed="0.000058"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.187484" elapsed="0.000358"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.187477" elapsed="0.000408"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.188233" elapsed="0.000011"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.188021" elapsed="0.000240"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.187989" elapsed="0.000282"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.190045" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.190082" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.190143" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.188307" elapsed="0.001852"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.190193" elapsed="0.000021"/>
-</return>
-<msg time="2026-02-23T11:22:44.190282" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.186940" elapsed="0.003354"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.190635" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.190357" elapsed="0.000295">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.190765" elapsed="0.000011"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.190822" elapsed="0.000008"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.190847" elapsed="0.000006"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.186783" elapsed="0.004108">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<arg>status=nonexistent_status</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.190961" elapsed="0.000009"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.191025" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>422</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.191085" elapsed="0.000008"/>
-</kw>
-<doc>Invalid status value should return 422.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.186602" elapsed="0.004564">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t4" name="Create Invoice Missing Client ID" line="61">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.191659" level="INFO">${body} = {'gig_id': 1, 'issue_date': '2026-03-01', 'due_date': '2026-03-16', 'status': 'draft'}</msg>
-<var>${body}</var>
-<arg>gig_id=${1}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<arg>status=draft</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.191406" elapsed="0.000265"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.194961" level="INFO">POST Request : url=http://127.0.0.1:8000/invoices/ 
- path_url=/invoices/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '86', 'Content-Type': 'application/json'} 
- body=b'{"gig_id": 1, "issue_date": "2026-03-01", "due_date": "2026-03-16", "status": "draft"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.194993" level="INFO">POST Response : url=http://127.0.0.1:8000/invoices/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '169', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","client_id"],"msg":"Field required","input":{"gig_id":1,"issue_date":"2026-03-01","due_date":"2026-03-16","status":"draft"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.195045" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.191730" elapsed="0.003327"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.195452" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>422</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.195180" elapsed="0.000302"/>
-</kw>
-<doc>Missing client_id should return 422.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.191256" elapsed="0.004293"/>
-</test>
-<test id="s1-s3-t5" name="Get Invoice By Valid ID" line="75">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.197420" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.197190" elapsed="0.000244"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197571" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197474" elapsed="0.000155"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.197464" elapsed="0.000176"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197733" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197664" elapsed="0.000092"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.197657" elapsed="0.000108"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197851" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.197785" elapsed="0.000089"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.197779" elapsed="0.000104"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.199372" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.199397" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.199446" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.197918" elapsed="0.001539"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.199484" elapsed="0.000019"/>
-</return>
-<msg time="2026-02-23T11:22:44.199566" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.196711" elapsed="0.002866"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.199863" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.199624" elapsed="0.000256">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.199990" elapsed="0.000012"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200049" elapsed="0.000008"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200075" elapsed="0.000006"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.195832" elapsed="0.004288">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200214" elapsed="0.000010"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${invoice_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200281" elapsed="0.000008"/>
-</kw>
-<kw name="Get Invoice By ID" owner="common">
-<var>${response}</var>
-<arg>${invoice_id}</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200357" elapsed="0.000009"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200417" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.json()}[id]</arg>
-<arg>${invoice_id}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.200473" elapsed="0.000008"/>
-</kw>
-<doc>Should return the correct invoice when given a valid ID.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.195631" elapsed="0.004924">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t6" name="Get Invoice By Invalid ID" line="88">
-<kw name="Get Invoice By ID" owner="common">
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.203862" level="INFO">GET Request : url=http://127.0.0.1:8000/invoices/99999 
- path_url=/invoices/99999 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-23T11:22:44.203895" level="INFO">GET Response : url=http://127.0.0.1:8000/invoices/99999 
- status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '30', 'content-type': 'application/json'} 
- body={"detail":"Invoice not found"} 
- </msg>
-<msg time="2026-02-23T11:22:44.203948" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/${invoice_id}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.200920" elapsed="0.003040"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.203990" elapsed="0.000017"/>
-</return>
-<msg time="2026-02-23T11:22:44.204068" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>99999</arg>
-<status status="PASS" start="2026-02-23T11:22:44.200815" elapsed="0.003264"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.204730" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>404</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.204343" elapsed="0.000419"/>
-</kw>
-<doc>Non-existent invoice ID should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.200644" elapsed="0.004191"/>
-</test>
-<test id="s1-s3-t7" name="Update Invoice Status To Sent" line="97">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.211463" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.205592" elapsed="0.005897"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211702" elapsed="0.000011"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211573" elapsed="0.000158"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.211543" elapsed="0.000200"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211841" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211766" elapsed="0.000097"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.211760" elapsed="0.000112"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211958" elapsed="0.000008"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.211892" elapsed="0.000088"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.211887" elapsed="0.000102"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.213775" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.213804" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.213858" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.212023" elapsed="0.001846"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.213897" elapsed="0.000018"/>
-</return>
-<msg time="2026-02-23T11:22:44.213979" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.205412" elapsed="0.008578"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.214300" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.214042" elapsed="0.000276">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214445" elapsed="0.000012"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214505" elapsed="0.000008"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214531" elapsed="0.000007"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.205233" elapsed="0.009346">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214672" elapsed="0.000010"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${invoice_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214738" elapsed="0.000009"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>status=sent</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214803" elapsed="0.000008"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/${invoice_id}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214862" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214921" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response.json()}[status]</arg>
-<arg>sent</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.214977" elapsed="0.000008"/>
-</kw>
-<doc>Should progress invoice status from draft to sent.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.204955" elapsed="0.010105">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t8" name="Update Invoice Status To Paid" line="111">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.216296" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.216098" elapsed="0.000212"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216429" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216345" elapsed="0.000139"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.216337" elapsed="0.000157"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216615" elapsed="0.000013"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216516" elapsed="0.000135"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.216509" elapsed="0.000162"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216793" elapsed="0.000011"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.216706" elapsed="0.000117"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.216697" elapsed="0.000135"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.218560" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.218585" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.218631" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.216872" elapsed="0.001770"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.218669" elapsed="0.000016"/>
-</return>
-<msg time="2026-02-23T11:22:44.218745" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.215877" elapsed="0.002878"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.219034" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.218803" elapsed="0.000248">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219159" elapsed="0.000012"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219216" elapsed="0.000009"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219244" elapsed="0.000006"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.215348" elapsed="0.003937">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219373" elapsed="0.000024"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${invoice_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219451" elapsed="0.000009"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>status=paid</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219512" elapsed="0.000008"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/${invoice_id}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219567" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219624" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response.json()}[status]</arg>
-<arg>paid</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.219679" elapsed="0.000007"/>
-</kw>
-<doc>Should mark invoice as paid.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.215151" elapsed="0.004613">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t9" name="Update Invoice Status To Void" line="125">
-<kw name="Create Test Client And Gig">
-<kw name="Create Client" owner="common">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.220557" level="INFO">${body} = {'name': 'Invoice Test Client', 'email': 'invoicetest_robot@example.com'}</msg>
-<var>${body}</var>
-<arg>name=${name}</arg>
-<arg>email=${email}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.220366" elapsed="0.000204"/>
-</kw>
-<if>
-<branch type="IF" condition="$phone is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>phone=${phone}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220691" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220606" elapsed="0.000111"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.220597" elapsed="0.000130"/>
-</if>
-<if>
-<branch type="IF" condition="$business_id is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>business_id=${business_id}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220817" elapsed="0.000009"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220749" elapsed="0.000091"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.220743" elapsed="0.000106"/>
-</if>
-<if>
-<branch type="IF" condition="$note is not None">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${body}</arg>
-<arg>note=${note}</arg>
-<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220935" elapsed="0.000007"/>
-</kw>
-<status status="NOT RUN" start="2026-02-23T11:22:44.220869" elapsed="0.000117"/>
-</branch>
-<status status="PASS" start="2026-02-23T11:22:44.220863" elapsed="0.000132"/>
-</if>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.222831" level="INFO">POST Request : url=http://127.0.0.1:8000/clients/ 
- path_url=/clients/ 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '73', 'Content-Type': 'application/json'} 
- body=b'{"name": "Invoice Test Client", "email": "invoicetest_robot@example.com"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.222860" level="INFO">POST Response : url=http://127.0.0.1:8000/clients/ 
- status=422, reason=Unprocessable Entity 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '449', 'content-type': 'application/json'} 
- body={"detail":[{"type":"missing","loc":["body","phone"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","business_id"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}},{"type":"missing","loc":["body","note"],"msg":"Field required","input":{"name":"Invoice Test Client","email":"invoicetest_robot@example.com"}}]} 
- </msg>
-<msg time="2026-02-23T11:22:44.222910" level="INFO">${response} = &lt;Response [422]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/clients/</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.221032" elapsed="0.001891"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2026-02-23T11:22:44.222950" elapsed="0.000016"/>
-</return>
-<msg time="2026-02-23T11:22:44.223025" level="INFO">${client_response} = &lt;Response [422]&gt;</msg>
-<var>${client_response}</var>
-<arg>name=Invoice Test Client</arg>
-<arg>email=invoicetest_robot@example.com</arg>
-<status status="PASS" start="2026-02-23T11:22:44.220190" elapsed="0.002845"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.223344" level="FAIL">Dictionary '${client_response.json()}' has no key 'id'.</msg>
-<var>${client_id}</var>
-<arg>${client_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.223086" elapsed="0.000274">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Gig" owner="common">
-<var>${gig_response}</var>
-<arg>client_id=${client_id}</arg>
-<arg>title=Invoice Test Gig</arg>
-<arg>wage=${1500}</arg>
-<arg>date=2026-03-01</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223476" elapsed="0.000014"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${gig_id}</var>
-<arg>${gig_response.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223535" elapsed="0.000008"/>
-</kw>
-<return>
-<value>${client_id}</value>
-<value>${gig_id}</value>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223560" elapsed="0.000007"/>
-</return>
-<var>${client_id}</var>
-<var>${gig_id}</var>
-<doc>Helper to create a client and gig, returns both IDs as a list.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.220026" elapsed="0.003578">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</kw>
-<kw name="Create Invoice" owner="common">
-<var>${create}</var>
-<arg>client_id=${client_id}</arg>
-<arg>gig_id=${gig_id}</arg>
-<arg>issue_date=2026-03-01</arg>
-<arg>due_date=2026-03-16</arg>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223712" elapsed="0.000011"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${invoice_id}</var>
-<arg>${create.json()}[id]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223778" elapsed="0.000007"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<var>${body}</var>
-<arg>status=void</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223836" elapsed="0.000008"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/${invoice_id}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.223891" elapsed="0.000008"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.224095" elapsed="0.000010"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response.json()}[status]</arg>
-<arg>void</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-02-23T11:22:44.224305" elapsed="0.000010"/>
-</kw>
-<doc>Should allow voiding an invoice.</doc>
-<status status="FAIL" start="2026-02-23T11:22:44.219852" elapsed="0.004539">Dictionary '${client_response.json()}' has no key 'id'.</status>
-</test>
-<test id="s1-s3-t10" name="Update Invoice Not Found" line="139">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.224798" level="INFO">${body} = {'status': 'paid'}</msg>
-<var>${body}</var>
-<arg>status=paid</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.224635" elapsed="0.000187"/>
-</kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2026-02-23T11:22:44.228173" level="INFO">PUT Request : url=http://127.0.0.1:8000/invoices/99999 
- path_url=/invoices/99999 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
- body=b'{"status": "paid"}' 
- </msg>
-<msg time="2026-02-23T11:22:44.228209" level="INFO">PUT Response : url=http://127.0.0.1:8000/invoices/99999 
- status=404, reason=Not Found 
- headers={'date': 'Mon, 23 Feb 2026 09:22:43 GMT', 'server': 'uvicorn', 'content-length': '48', 'content-type': 'application/json'} 
- body={"detail":"Invoice with the given id not found"} 
- </msg>
-<msg time="2026-02-23T11:22:44.228270" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>${SESSION}</arg>
-<arg>/invoices/99999</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.225029" elapsed="0.003253"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-02-23T11:22:44.228665" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>404</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.228384" elapsed="0.000309"/>
-</kw>
-<doc>PUT on non-existent invoice should return 404.</doc>
-<status status="PASS" start="2026-02-23T11:22:44.224480" elapsed="0.004283"/>
-</test>
-<status status="FAIL" start="2026-02-23T11:22:44.175271" elapsed="0.053635"/>
-</suite>
-<status status="FAIL" start="2026-02-23T11:22:44.007909" elapsed="0.221478"/>
+<status status="PASS" start="2026-02-23T13:54:51.367753" elapsed="0.150503"/>
 </suite>
 <statistics>
 <total>
-<stat pass="11" fail="19" skip="0">All Tests</stat>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Robot Tests" id="s1" pass="11" fail="19" skip="0">Robot Tests</stat>
-<stat name="Test Clients" id="s1-s1" pass="6" fail="6" skip="0">Robot Tests.Test Clients</stat>
-<stat name="Test Gigs" id="s1-s2" pass="2" fail="6" skip="0">Robot Tests.Test Gigs</stat>
-<stat name="Test Invoices" id="s1-s3" pass="3" fail="7" skip="0">Robot Tests.Test Invoices</stat>
+<stat name="Test Clients" id="s1" pass="12" fail="0" skip="0">Test Clients</stat>
 </suite>
 </statistics>
 <errors>
