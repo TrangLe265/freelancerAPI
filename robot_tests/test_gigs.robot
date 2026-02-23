@@ -4,8 +4,10 @@ Suite Setup       Create API Session
 
 *** Keywords ***
 Create Test Client
-    [Documentation]    Helper to create a fresh client for gig tests.
-    ${response}=    Create Client    name=Gig Test Client    email=gigtest_robot@example.com
+    ${uuid}=    Evaluate    __import__('uuid').uuid4().hex[:8]
+    ${email}=    Set Variable    gigtest_${uuid}@example.com
+    ${response}=    Create Client    name=Gig Test Client    email=${email}
+    Should Be Equal As Integers    ${response.status_code}    200
     RETURN    ${response.json()}[id]
 
 *** Test Cases ***

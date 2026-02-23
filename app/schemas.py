@@ -36,9 +36,9 @@ class GigCreate(BaseModel):
     client_id: int
     title: str
     wage: float
-    location: Optional[str]
+    location: Optional[str]=None    
     date: date
-    description: Optional[str]
+    description: Optional[str]=None
 
 class GigUpdate(BaseModel):
     title: Optional[str]=None
@@ -52,9 +52,9 @@ class GigResponse(GigCreate):
     client_id: Optional[int] = None
     title: str
     wage: float
-    location: Optional[str]
+    location: Optional[str] = None
     date: date
-    description: Optional[str]
+    description: Optional[str] = None
     status: GigStatus
     class Config:
         from_attributes = True   

@@ -24,6 +24,9 @@ def get_gig(gig_id: int, db: Session = Depends(get_db)):
 def create_gig(gig: schemas.GigCreate, db: Session = Depends(get_db)):
     if (db.query(models.Client).filter(models.Client.id == gig.client_id).first() is None):
         raise HTTPException(status_code=400, detail="Client with the given id does not exist")
+
+    if (gig.wage <= 0 or gig.wage is None):
+        raise HTTPException(status_code=400, detail="Wage must be greater than 0")
         
     db_gig = models.Gig(**gig.dict())
     db.add(db_gig)
