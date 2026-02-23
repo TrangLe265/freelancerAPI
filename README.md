@@ -17,6 +17,7 @@ This backend serves the following frontend https://github.com/TrangLe265/freelan
 * Flexible filtering (by client, gig, status)
 * Realistic seed data for demos and testing
 * OpenAPI / Swagger documentation out of the box
+* Automated tests included
 
 ---
 
@@ -28,6 +29,7 @@ This backend serves the following frontend https://github.com/TrangLe265/freelan
 * **Pydantic** – data validation & serialization
 * **SQLite / PostgreSQL** (configurable)
 * **Uvicorn** – ASGI server
+* **Robot Framework** - API tests
 
 ---
 
@@ -117,23 +119,26 @@ Handled using `default_factory` to ensure values are calculated **at request tim
 * `POST /clients`
 * `GET /clients`
 * `GET /clients/{id}`
-* `PATCH /clients/{id}` (update / archive)
+* `PATCH /clients/{id}` (update client status)
+* `PUT /client/{id}` (normal update of gigs)
 
 ### Gigs
 
 * `POST /gigs`
 * `GET /gigs`
 * `GET /gigs/{id}`
-* `PATCH /gigs/{id}` (update / cancel)
+* `PATCH /gigs/{id}` (update gig status / soft delete)
+* `PUT /gigs/{id}` (normal update of gigs)
 
 ### Invoices
 
 * `POST /invoices`
 * `GET /invoices`
 * `GET /invoices/{id}`
-* `PATCH /invoices/{id}` (status updates)
+* `PUT /invoices/{id}`(update invoices status / soft delete)
 
-Filtering invoices:
+
+Chain-filtering invoices is possible:
 
 ```
 GET /invoices?client_id=1&status=paid
@@ -141,7 +146,24 @@ GET /invoices?client_id=1&status=paid
 
 ---
 
-## 🌱 Seed Data
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd freelancer-invoicing-api
+```
+
+### 2. Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+Now your terminal should start working with the (venv) prefix
+
+### OPTIONAL:  🌱 Seed Data
 
 The project includes realistic seed data:
 
@@ -165,24 +187,6 @@ If you need to clear the database and start from scratch:
 ```bash
 python3 -m app.reset_db
 ```
----
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone <repo-url>
-cd freelancer-invoicing-api
-```
-
-### 2. Create a virtual environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-Now your terminal should start working with the (venv) prefix
 
 ### 3. Install dependencies
 
@@ -201,6 +205,20 @@ uvicorn app.main:app --reload
 * Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 * ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
+### 6. Running tests
+
+```bash
+robot robot_tests/ 
+```
+Tests results should be printed on the terminal
+
+### 7. Shut down the program
+
+Remember to stop the python environment after using 
+```bash
+deactivate
+```
+Tests results should be printed on the terminal
 ---
 
 ## 🧪 Development Notes
