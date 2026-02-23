@@ -5,7 +5,9 @@ Suite Setup       Create API Session
 *** Keywords ***
 Create Test Client And Gig
     [Documentation]    Helper to create a client and gig, returns both IDs as a list.
-    ${client_response}=    Create Client    name=Invoice Test Client    email=invoicetest_robot@example.com
+    ${uuid}=    Evaluate    __import__('uuid').uuid4().hex[:8]
+    ${email}=    Set Variable    gigtest_${uuid}@example.com
+    ${client_response}=    Create Client    name=Invoice Test Client    email=${email}
     ${client_id}=    Set Variable    ${client_response.json()}[id]
     ${gig_response}=    Create Gig
     ...    client_id=${client_id}
