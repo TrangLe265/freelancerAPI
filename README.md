@@ -158,12 +158,12 @@ This makes it easy to:
 Run the seed script:
 
 ```bash
-python -m app.seed
+python3 -m app.seed
 ```
 If you need to clear the database and start from scratch: 
 
 ```bash
-python -m app.reset_db
+python3 -m app.reset_db
 ```
 ---
 
@@ -179,9 +179,10 @@ cd freelancer-invoicing-api
 ### 2. Create a virtual environment
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
+Now your terminal should start working with the (venv) prefix
 
 ### 3. Install dependencies
 
@@ -192,7 +193,7 @@ pip install -r requirements.txt
 ### 4. Run the API
 
 ```bash
-python -m uvicorn app.main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ### 5. Open API docs
@@ -229,4 +230,5 @@ This project is for learning and portfolio purposes.
 
 ## 👤 Author
 
-Built by **Trang Thuy Le** 
+Built by **Trang Thuy Le**
+
